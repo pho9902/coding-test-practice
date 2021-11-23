@@ -13,7 +13,7 @@ const solution = array => {
 };
 
 const array1 = [3];
-const array2 = [5, 2, 13, 23, 100, 4];
+const array2 = [-5, 2, 13, 23, 100, 4];
 const array3 = [2, 2];
 
 console.log(solution(array2));
