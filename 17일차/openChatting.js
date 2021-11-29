@@ -1,18 +1,22 @@
-function solution(record) {
-  const answer = [];
-  const obj = {};
-  for (let el of record) {
-    if (el.split(" ")[0] === "Leave") continue;
-    obj[el.split(" ")[1]] = el.split(" ")[2];
+function solution(records) {
+  const userInfo = {};
+
+  for (let record of records) {
+    const [action, uid, name] = record.split(" ");
+    if (action === "Leave") continue;
+    userInfo[uid] = name;
   }
 
-  for (let els of record) {
-    if (els.split(" ")[0] === "Enter") {
-      answer.push(obj[els.split(" ")[1]] + "님이 들어왔습니다.");
-    } else if (els.split(" ")[0] === "Leave") {
-      answer.push(obj[els.split(" ")[1]] + "님이 나갔습니다.");
-    }
-  }
-
-  return answer;
+  return records
+    .map(record => {
+      const [action, uid] = record.split(" ").splice(0, 2);
+      if (action === "Enter") {
+        return userInfo[uid] + "님이 들어왔습니다.";
+      } else if (action === "Leave") {
+        return userInfo[uid] + "님이 나갔습니다.";
+      } else return "";
+    })
+    .filter(el => el !== "");
 }
+
+console.log(solution(["Enter uid132 박현우", "Change uid132 박"]));
