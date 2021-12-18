@@ -7,3 +7,5 @@ function solution(x, n) {
   }
   return answer;
 }
+
+console.log(13);
