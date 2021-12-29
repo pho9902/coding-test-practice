@@ -1,11 +1,8 @@
-function solution(s) {
+function solution(words) {
   const answer = [];
-  const strArr = s.split("");
 
-  for (let i = 0; i < strArr.length; i++) {
-    strArr[i] === answer[answer.length - 1]
-      ? answer.pop()
-      : answer.push(strArr[i]);
+  for (let word of words) {
+    word === answer[answer.length - 1] ? answer.pop() : answer.push(word);
   }
 
   return answer.length ? 0 : 1;
