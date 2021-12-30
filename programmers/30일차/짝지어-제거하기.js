@@ -1,4 +1,6 @@
 function solution(words) {
+  if (words.length % 2) return 0;
+
   const answer = [];
 
   for (let word of words) {
