@@ -9,3 +9,5 @@ function solution(words) {
 
   return answer.length ? 0 : 1;
 }
+
+var age = 26;
