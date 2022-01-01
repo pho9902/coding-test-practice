@@ -1,4 +1,5 @@
 function solution(words) {
+  //홀수면 어짜피 안됨
   if (words.length % 2) return 0;
 
   const answer = [];
@@ -9,5 +10,3 @@ function solution(words) {
 
   return answer.length ? 0 : 1;
 }
-
-var age = 26;
