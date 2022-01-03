@@ -1,8 +1,9 @@
 function solution(numbers) {
-  return numbers.map(el => {
-    return el.toString(2)[el.toString(2).length - 1] === "0"
-      ? el + 1
-      : notZero("0" + el.toString(2));
+  return numbers.map(number => {
+    const binNumber = number.toString(2);
+    return binNumber[binNumber.length - 1] === "0"
+      ? number + 1
+      : notZero("0" + binNumber);
   });
 }
 
