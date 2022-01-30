@@ -1,6 +1,6 @@
 function solution(id_list, reports, k) {
   const obj = {};
-  const answer = id_list.map(_ => 0);
+  const answer = Array(id_list.length).fill(0);
 
   for (let report of reports) {
     const data = report.split(" ");
